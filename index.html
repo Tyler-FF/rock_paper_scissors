@@ -9,14 +9,18 @@
     <style> input {
         min-width: 250px;
     }
+
+    #PlayerChoice, #ComputerChoice {
+        font-weight: bold;
+    }
         </style>
 </head>
 <body>
     <h1>Rock, Paper, Scissors!</h1>
     <p>Play the classic 'rock paper scissors' game against the computer!</p>
     <p>Enter your choice:</p>
-    <input type="text" id="PlayerSelection" name="PlayerSelection" placeholder="Type either 'Rock' 'Paper' or 'Scissors'">
-    <button>Submit</button>
+    <input type="text" id="PlayerSelection">
+    <button onClick="showPlayerChoice()">Submit</button>
     <p>You chose:<p id ="PlayerChoice"></p></p>
     <p>The computer chose:<p id ="ComputerChoice"></p></p>
     <p id="Result"></p>
