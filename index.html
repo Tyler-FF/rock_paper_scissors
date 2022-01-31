@@ -5,10 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors!</title>
+    <script src="javascript/script.js"></script>
+    <style> input {
+        min-width: 250px;
+    }
+        </style>
 </head>
 <body>
     <h1>Rock, Paper, Scissors!</h1>
     <p>Play the classic 'rock paper scissors' game against the computer!</p>
-    <p>Choose from a best of 1 or 5</p>
+    <p>Enter your choice:</p>
+    <input type="text" id="PlayerSelection" name="PlayerSelection" placeholder="Type either 'Rock' 'Paper' or 'Scissors'">
+    <button>Submit</button>
+    <p>You chose:<p id ="PlayerChoice"></p></p>
+    <p>The computer chose:<p id ="ComputerChoice"></p></p>
+    <p id="Result"></p>
 </body>
 </html>
