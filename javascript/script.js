@@ -1,29 +1,69 @@
-//User types in their choice
-function showPlayerChoice() {
-    let playerSelection = document.getElementById("PlayerSelection").value;
-    document.getElementById("PlayerChoice").innerHTML = playerSelection;
-    document.getElementById("ComputerChoice").innerHTML = computerChoice;
-}
+//UI
 
-//Random number generator between 1-3
-function getRandomInt() {
-    return Math.floor(Math.random() * 3) + 1;
-}
+const playerSelectionDisplay = document.getElementById('player-selection');
+const computerSelectionDisplay = document.getElementById('computer-selection');
+const resultDisplay = document.getElementById('result');
+const playerChoices = document.querySelectorAll('button');
 
-let randomInt = getRandomInt();
-console.log(randomInt);
+let playerSelection;
+let computerSelection;
+let result;
 
-//Assigns random number to output which will be the computers choice
-let computerChoice = showComputerChoice();
+//Displays the result each time the user makes a choice
 
-function showComputerChoice(text2) {
-    if (randomInt == 1) {
-        return text2 = "Rock";
-    } else if (randomInt == 2) {
-        return text2 = "Paper";
-    } else if (randomInt == 3) {
-        return text2 = "Scissors";
+playerChoices.forEach(function(possibleChoice) {
+    possibleChoice.addEventListener('click', function(e) {
+        playerSelection = e.target.id;
+        playerSelectionDisplay.innerHTML = playerSelection;
+        randomComputerSelection();
+        displayResult();
+    })
+});
+
+/*Simplified code of the function above using arrows
+
+playerChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (showPlayerSelection) => { 
+    playerSelection = showPlayerSelection.target.id; 
+    playerSelectionDisplay.innerHTML = playerSelection;
+}))
+
+*/
+
+//Generates computer choice
+
+function randomComputerSelection() {
+    let computerChoice = Math.floor(Math.random() * 3);
+    if (computerChoice === 0) {
+        computerSelection = 'Rock'
     }
+    if (computerChoice === 1) {
+        computerSelection = 'Paper'
+    }
+    if (computerChoice === 2) {
+        computerSelection = 'Scissors'      
+    }
+    computerSelectionDisplay.innerHTML = computerSelection;
 }
 
-//Chooses which display to output based on the result
+//Displays the result
+
+function displayResult() {
+    if (computerSelection === playerSelection) {
+        result = 'Tie';
+    }
+    if (
+        computerSelection === 'Rock' && playerSelection === 'Paper' ||
+        computerSelection === 'Paper' && playerSelection === 'Scissors' ||
+        computerSelection === 'Scissors' && playerSelection === 'Rock'
+    ) {
+        result = 'You Win!'
+    }
+    if (
+        computerSelection === 'Rock' && playerSelection === 'Scissors' ||
+        computerSelection === 'Paper' && playerSelection === 'Rock' ||
+        computerSelection === 'Scissors' && playerSelection === 'Paper'
+    ) {
+        result = 'You Lose!'
+    }
+    resultDisplay.innerHTML = result;
+}
