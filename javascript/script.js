@@ -4,10 +4,14 @@ const playerSelectionDisplay = document.getElementById('player-selection');
 const computerSelectionDisplay = document.getElementById('computer-selection');
 const resultDisplay = document.getElementById('result');
 const playerChoices = document.querySelectorAll('button');
+const playerScoreDisplay = document.getElementById('player-score');
+const computerScoreDisplay = document.getElementById('computer-score');
 
 let playerSelection;
 let computerSelection;
 let result;
+let playerScore = 0;
+let computerScore = 0;
 
 //Displays the result each time the user makes a choice
 
@@ -17,6 +21,7 @@ playerChoices.forEach(function(possibleChoice) {
         playerSelectionDisplay.innerHTML = playerSelection;
         randomComputerSelection();
         displayResult();
+        winner();
     })
 });
 
@@ -45,7 +50,7 @@ function randomComputerSelection() {
     computerSelectionDisplay.innerHTML = computerSelection;
 }
 
-//Displays the result
+//Displays the result and updates the scores
 
 function displayResult() {
     if (computerSelection === playerSelection) {
@@ -56,14 +61,18 @@ function displayResult() {
         computerSelection === 'Paper' && playerSelection === 'Scissors' ||
         computerSelection === 'Scissors' && playerSelection === 'Rock'
     ) {
-        result = 'You Win!'
+        result = 'You Win!' + ' ' + playerSelection + ' beats ' + computerSelection;
+        playerScore++;
+        playerScoreDisplay.innerHTML = playerScore;
     }
     if (
         computerSelection === 'Rock' && playerSelection === 'Scissors' ||
         computerSelection === 'Paper' && playerSelection === 'Rock' ||
         computerSelection === 'Scissors' && playerSelection === 'Paper'
     ) {
-        result = 'You Lose!'
+        result = 'You Lose!'  + ' ' + computerSelection + ' beats ' + playerSelection;
+        computerScore++;
+        computerScoreDisplay.innerHTML = computerScore;
     }
     resultDisplay.innerHTML = result;
 }
