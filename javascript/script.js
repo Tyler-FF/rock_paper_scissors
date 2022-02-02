@@ -76,3 +76,21 @@ function displayResult() {
     }
     resultDisplay.innerHTML = result;
 }
+
+//Declare overall winner and reset scores
+function winner() {
+    if (playerScore === 5) {
+        alert('Congratulations! You have won!');
+        playerScore = 0;
+        playerScoreDisplay.innerHTML = playerScore;
+        computerScore = 0;
+        computerScoreDisplay.innerHTML = computerScore;
+    }
+    if (computerScore === 5) {
+        alert('Unlucky! The computer has won!');
+        playerScore = 0;
+        playerScoreDisplay.innerHTML = playerScore;
+        computerScore = 0;
+        computerScoreDisplay.innerHTML = computerScore;
+    }
+}
