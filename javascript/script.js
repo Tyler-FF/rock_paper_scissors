@@ -30,6 +30,9 @@ playerChoices.forEach(function(possibleChoice) {
 playerChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (showPlayerSelection) => { 
     playerSelection = showPlayerSelection.target.id; 
     playerSelectionDisplay.innerHTML = playerSelection;
+    randomComputerSelection();
+    displayResult();
+    winner();
 }))
 
 */
@@ -37,15 +40,15 @@ playerChoices.forEach(possibleChoice => possibleChoice.addEventListener('click',
 //Generates computer choice
 
 function randomComputerSelection() {
-    let computerChoice = Math.floor(Math.random() * 3);
+    let computerChoice = Math.floor(Math.random() * playerChoices.length);
     if (computerChoice === 0) {
-        computerSelection = 'Rock'
+        computerSelection = 'Fire'
     }
     if (computerChoice === 1) {
-        computerSelection = 'Paper'
+        computerSelection = 'Water'
     }
     if (computerChoice === 2) {
-        computerSelection = 'Scissors'      
+        computerSelection = 'Grass'      
     }
     computerSelectionDisplay.innerHTML = computerSelection;
 }
@@ -57,18 +60,18 @@ function displayResult() {
         result = 'Tie';
     }
     if (
-        computerSelection === 'Rock' && playerSelection === 'Paper' ||
-        computerSelection === 'Paper' && playerSelection === 'Scissors' ||
-        computerSelection === 'Scissors' && playerSelection === 'Rock'
+        computerSelection === 'Fire' && playerSelection === 'Water' ||
+        computerSelection === 'Water' && playerSelection === 'Grass' ||
+        computerSelection === 'Grass' && playerSelection === 'Fire'
     ) {
         result = 'You Win!' + ' ' + playerSelection + ' beats ' + computerSelection;
         playerScore++;
         playerScoreDisplay.innerHTML = playerScore;
     }
     if (
-        computerSelection === 'Rock' && playerSelection === 'Scissors' ||
-        computerSelection === 'Paper' && playerSelection === 'Rock' ||
-        computerSelection === 'Scissors' && playerSelection === 'Paper'
+        computerSelection === 'Fire' && playerSelection === 'Grass' ||
+        computerSelection === 'Water' && playerSelection === 'Fire' ||
+        computerSelection === 'Grass' && playerSelection === 'Water'
     ) {
         result = 'You Lose!'  + ' ' + computerSelection + ' beats ' + playerSelection;
         computerScore++;
