@@ -5,23 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fire, Water, Grass!</title>
-    <link rel=stylesheet href="css/style.css.txt">
+    <link rel=stylesheet href="css/style.css">
 </head>
 <body>
 <section>
     <div class="header">
-        <h1>Fire, Water, Grass!</h1>
+        <h1 class="game-name">Fire, Water, Grass!</h1>
+        <h2 class="game-subname">A variation of Rock, Paper, Scissors!</h2>
     </div>
-        <h2>Player score: <span id="player-score">0</span></h2>
-        <h2>Computer score: <span id="computer-score">0</span></h2>
-
-        <button id="Fire">Rock</button>
-        <button id="Water">Paper</button>
-        <button id="Grass">Scissors</button>
-
-        <h2>Player choice: <span id="player-selection"></span></h2>
-        <h2>Computer choice: <span id="computer-selection"></span></h2>
-        <h2>Result: <span id="result"></span></h2>
+    <div class="rules">
+        <p class="types"><span class="fire">Fire</span> beats <span class="grass">Grass</span>!</p>
+        <p class="types"><span class="water">Water</span> beats <span class="fire">Fire</span></p>
+        <p class="types"><span class="grass">Grass</span> beats <span class="water">Water</span>!</p>
+    </div>
+    <div class="scores">
+        <h2 class="current-score">Player score: <span id="player-score">0</span></h2>
+        <h2 class="current-score">Computer score: <span id="computer-score">0</span></h2>
+    </div>
+    <div class="buttons">
+        <button class="choice fire" id="Fire">Fire</button>
+        <button class="choice water" id="Water">Water</button>
+        <button class="choice grass" id="Grass">Grass</button>
+    </div>
+    <div class="final-choices">
+        <h2 class="result">Player choice: <span id="player-selection"></span></h2>
+        <h2 class="result">Computer choice: <span id="computer-selection"></span></h2>
+    </div>
+    <div class="final-result">
+        <h2 class="result">Result: <span id="result"></span></h2>
+    </div>
 </section>
 
 <script src="javascript/script.js"></script>

@@ -64,7 +64,7 @@ function displayResult() {
         computerSelection === 'Water' && playerSelection === 'Grass' ||
         computerSelection === 'Grass' && playerSelection === 'Fire'
     ) {
-        result = 'You Win!' + ' ' + playerSelection + ' beats ' + computerSelection;
+        result = 'You Win!';
         playerScore++;
         playerScoreDisplay.innerHTML = playerScore;
     }
@@ -73,7 +73,7 @@ function displayResult() {
         computerSelection === 'Water' && playerSelection === 'Fire' ||
         computerSelection === 'Grass' && playerSelection === 'Water'
     ) {
-        result = 'You Lose!'  + ' ' + computerSelection + ' beats ' + playerSelection;
+        result = 'You Lose!';
         computerScore++;
         computerScoreDisplay.innerHTML = computerScore;
     }

@@ -1,0 +1,105 @@
+@font-face {
+    font-family: data;
+    src: url(data-control/data-latin.ttf);
+}
+
+body {
+    font-family: data;
+    background-color: #000000;
+    color: #ffffff;
+    margin: 0;
+    padding:0;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.game-name {
+    font-size: 4em;
+    margin: 20px 0 0 0;
+    padding: 5px;
+}
+
+.game-subname {
+    font-size: 1em;
+    margin: 0 0 20px 0;
+}
+
+.rules {
+    display: flex;
+    flex: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    padding: 20px;
+}
+
+.scores {
+    display: flex;
+    flex: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    padding: 20px;
+    font-size: 1.75em;;
+}
+
+.buttons {
+    display: flex;
+    flex: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding: 20px;
+}
+
+.choice {
+    padding: 0;
+    margin: 0;
+    border: #000000;
+    font-family: data;
+    background-color: #000000;
+    font-size: 3em;
+    width: 200px;
+}
+
+.final-choices {
+    display: flex;
+    flex: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+    padding: 20px;
+}
+
+.final-result {
+    display: flex;
+    flex: auto;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-size: 2.5em;
+}
+
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fire {
+    color: #FF3131;
+}
+
+.water {
+    color: #1F51FF;
+}
+
+.grass {
+    color: #39ff14;
+}
